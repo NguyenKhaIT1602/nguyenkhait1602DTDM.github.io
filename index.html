@@ -30,6 +30,7 @@
                 <li><a href="#about">Về Chúng Tôi</a></li>
                 <li><a href="#team">Thành Viên</a></li>
                 <li><a href="#cloud-info">Nghiên cứu</a></li>
+                <li><a href="#security">Bảo Mật</a></li>
                 <li><a href="#contact">Liên Hệ</a></li>
             </ul>
         </div>
@@ -345,12 +346,148 @@
             </div>
         </section>
 
+        <!-- Section: Bảo Mật & Zero Trust -->
+        <section id="security" class="section security-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">An Toàn & Zero Trust</h2>
+                    <p class="section-subtitle">Authentication, Authorization và mô hình bảo mật hiện đại</p>
+                </div>
+
+                <div class="faq-grid">
+                    <!-- Concept: AuthN vs AuthZ -->
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-user-lock"></i></div>
+                        <div class="faq-content">
+                            <h3>1. Authentication vs. Authorization</h3>
+                            <ul>
+                                <li><strong>Authentication (Xác thực):</strong> Diễn ra <em>trước</em>. Trả lời câu hỏi "Bạn là ai?" (Verify identity).</li>
+                                <li><strong>Authorization (Ủy quyền):</strong> Diễn ra <em>sau</em>. Trả lời câu hỏi "Bạn được làm gì?". Dựa trên nguyên tắc <strong>Least Privilege</strong> (quyền tối thiểu - chỉ cấp quyền vừa đủ để làm việc).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- IAM Role -->
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-id-card-alt"></i></div>
+                        <div class="faq-content">
+                            <h3>2. Vai trò của IAM trong Cloud</h3>
+                            <p>Identity and Access Management (IAM) là khung bảo mật giúp:</p>
+                            <ul>
+                                <li>Quản lý danh tính và kiểm soát truy cập tập trung.</li>
+                                <li>Hỗ trợ <strong>MFA</strong> (Xác thực đa yếu tố) và <strong>SSO</strong> (Đăng nhập một lần).</li>
+                                <li>Là nền tảng triển khai <strong>Zero Trust</strong>.</li>
+                                <li>Giảm rủi ro lộ dữ liệu và tấn công chiếm quyền.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Zero Trust Principles -->
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-shield-virus"></i></div>
+                        <div class="faq-content">
+                            <h3>3. Nguyên lý Zero Trust</h3>
+                            <p>Triết lý: <strong>"Never trust, always verify"</strong> (Không tin ai, luôn xác minh).</p>
+                            <ul>
+                                <li><strong>Xác thực liên tục:</strong> Không chỉ lúc đăng nhập, mà kiểm tra xuyên suốt phiên làm việc.</li>
+                                <li><strong>Phân đoạn nhỏ (Micro-segmentation):</strong> Chia nhỏ mạng để ngăn chặn kẻ tấn công di chuyển.</li>
+                                <li><strong>Hạn chế di chuyển ngang:</strong> Ngăn chặn Lateral Movement khi một thiết bị bị xâm nhập.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- System Behaviors -->
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-traffic-light"></i></div>
+                        <div class="faq-content">
+                            <h3>4. Ghi nhận hành vi hệ thống</h3>
+                            <ul>
+                                <li><i class="fas fa-ban text-red-500"></i> <strong>Chưa xác thực:</strong> Cloudflare Access chặn ngay lập tức, yêu cầu đăng nhập.</li>
+                                <li><i class="fas fa-times-circle text-red-500"></i> <strong>Xác thực sai:</strong> Bị từ chối truy cập (Access Denied).</li>
+                                <li><i class="fas fa-check-circle text-green-500"></i> <strong>Xác thực đúng:</strong> Cấp token, truy cập trang web bình thường và duy trì session an toàn.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Scenarios Comparison -->
+                    <div class="faq-card" style="flex-direction: column;">
+                        <div class="faq-content" style="width: 100%;">
+                            <div style="text-align: center; margin-bottom: 20px;">
+                                <img src="anhsodo_t2.jpg" alt="Security Illustration" style="max-width: 100%; border-radius: 12px; box-shadow: var(--shadow-md);">
+                            </div>
+                            <h3>5. Các kịch bản rủi ro & giải pháp</h3>
+                            <div class="table-container">
+                                <table class="comparison-table">
+                                    <tr>
+                                        <th>Mô hình</th>
+                                        <th>Tình trạng & Rủi ro</th>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Website Public</strong><br>(Không kiểm soát)</td>
+                                        <td>Dễ bị tấn công khai thác lỗ hổng, DDoS và rò rỉ dữ liệu. Bất kỳ ai cũng có thể truy cập.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Website có IAM</strong><br>(Không Zero Trust)</td>
+                                        <td>Vẫn tồn tại rủi ro <em>di chuyển ngang</em> (lateral movement), thiết bị không an toàn và phiên đăng nhập kéo dài.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>IAM + Zero Trust</strong><br>(Bảo mật cao)</td>
+                                        <td>Bảo mật cao hơn nhưng có rủi ro: cấu hình sai policy, phụ thuộc điểm ra quyết định trung tâm và hiện tượng "mệt mỏi MFA".</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Traditional vs Zero Trust Comparison -->
+                    <div class="faq-card" style="flex-direction: column;">
+                         <div class="faq-content" style="width: 100%;">
+                            <h3>6. So sánh: Bảo mật Truyền thống vs. Zero Trust</h3>
+                            <div class="table-container">
+                                <table class="comparison-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tiêu chí</th>
+                                            <th>Truyền thống (Traditional)</th>
+                                            <th>Zero Trust</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Nguyên tắc</strong></td>
+                                            <td>"Tin tưởng nhưng xác minh" (Trust but verify)</td>
+                                            <td>"Không bao giờ tin, luôn xác minh" (Never trust, always verify)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Phạm vi bảo vệ</strong></td>
+                                            <td>Vành đai mạng (Perimeter-based)</td>
+                                            <td>Bảo vệ dữ liệu & người dùng (Data-centric)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Xác thực</strong></td>
+                                            <td>Một lần tại biên (khi đăng nhập)</td>
+                                            <td>Xác thực liên tục (Continuous verification)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Quyền hạn</strong></td>
+                                            <td>Quyền truy cập rộng (mạng ngang hàng)</td>
+                                            <td>Quyền tối thiểu (Least privilege), phân đoạn vi mô</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="section contact-section">
             <div class="container">
-                <br class="contact-box">
-                    <h2>Liên Hệ Với Chúng Tôi</h2>
-                    <p>Bạn có ý tưởng tuyệt vời? Hãy cùng nhau hiện thực hóa nó!</p> 
+                <div class="contact-box">
+                    <h2>Liên Hệ Với Chúng Tôi</h2> 
+                    <p>Bạn có ý tưởng tuyệt vời? Hãy cùng nhau hiện thực hóa nó!</p> </br>
                     <a href="mailto:contact@dreamteam.com" class="btn btn-secondary">Gửi Email Ngay</a>
                 </div>
             </div>
