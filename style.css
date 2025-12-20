@@ -617,3 +617,45 @@ footer {
     .about-content { grid-template-columns: 1fr; }
     .tech-grid { grid-template-columns: 1fr; }
 }
+
+/* Table Styles for Security Comparison */
+.table-container {
+    overflow-x: auto;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #e2e8f0;
+    margin-top: 1rem;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    text-align: left;
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.comparison-table th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tr:hover {
+    background: #f1f5f9;
+}
+
+/* Utility Classes */
+.text-red-500 { color: #ef4444; }
+.text-green-500 { color: #22c55e; }
