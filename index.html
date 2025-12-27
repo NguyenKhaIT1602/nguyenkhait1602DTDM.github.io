@@ -478,6 +478,84 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- HTTPS Info -->
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-lock"></i></div>
+                        <div class="faq-content">
+                            <h3>7. HTTPS (Hypertext Transfer Protocol Secure)</h3>
+                            <p>Phiên bản an toàn của HTTP, dùng để truyền dữ liệu giữa trình duyệt và máy chủ. Điểm khác biệt quan trọng:</p>
+                            <ul>
+                                <li>Sử dụng <strong>TLS/SSL</strong> để mã hóa dữ liệu (tránh nghe lén), xác thực danh tính máy chủ và đảm bảo toàn vẹn dữ liệu.</li>
+                                <li>URL dùng tiền tố <code>https://</code> và trình duyệt hiển thị biểu tượng ổ khóa.</li>
+                                <li>Giúp bảo vệ người dùng khi đăng nhập, thanh toán, nhập thông tin cá nhân.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- HTTP Security Headers -->
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="faq-content">
+                            <h3>8. HTTP Security Headers</h3>
+                            <p>Các trường cấu hình bảo mật được máy chủ gửi kèm trong phản hồi HTTP nhằm kiểm soát hành vi trình duyệt và ngăn chặn tấn công.</p>
+                            <ul>
+                                <li><strong>Strict-Transport-Security (HSTS):</strong> Bắt buộc dùng HTTPS.</li>
+                                <li><strong>Content-Security-Policy (CSP):</strong> Chống XSS / chèn script.</li>
+                                <li><strong>X-Content-Type-Options:</strong> Chống MIME sniffing.</li>
+                                <li><strong>X-Frame-Options:</strong> Chống clickjacking.</li>
+                                <li><strong>Referrer-Policy:</strong> Hạn chế rò rỉ thông tin referrer.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- OWASP Top 10 -->
+                    <div class="faq-card" style="flex-direction: column;">
+                        <div class="faq-content" style="width: 100%;">
+                            <h3>9. OWASP Top 10 (2021)</h3>
+                            <p>Danh sách 10 nhóm rủi ro bảo mật web phổ biến và nghiêm trọng nhất:</p>
+                            <div class="table-container">
+                                <table class="comparison-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>A01 – Broken Access Control</td>
+                                            <td>A06 – Vulnerable & Outdated Components</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A02 – Cryptographic Failures</td>
+                                            <td>A07 – Identification & Authentication Failures</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A03 – Injection</td>
+                                            <td>A08 – Software & Data Integrity Failures</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A04 – Insecure Design</td>
+                                            <td>A09 – Security Logging & Monitoring Failures</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A05 – Security Misconfiguration</td>
+                                            <td>A10 – Server-Side Request Forgery (SSRF)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OWASP Juice Shop -->
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-flask"></i></div>
+                        <div class="faq-content">
+                            <h3>10. OWASP Juice Shop</h3>
+                            <p>Một website cố tình chứa lỗ hổng bảo mật, trang này minh họa gần như đầy đủ lỗ hổng trong Top 10, được dùng để:</p>
+                            <ul>
+                                <li>Thực hành pentest và học khai thác lỗ hổng OWASP Top 10.</li>
+                                <li>Rèn kỹ năng bảo mật ứng dụng web.</li>
+                                <li>Dùng trong CTF, giảng dạy an toàn thông tin.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
