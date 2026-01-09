@@ -484,36 +484,20 @@
                         <div class="faq-icon"><i class="fas fa-lock"></i></div>
                         <div class="faq-content">
                             <h3>7. HTTPS (Hypertext Transfer Protocol Secure)</h3>
-                            <p>Phiên bản an toàn của HTTP, dùng để truyền dữ liệu giữa trình duyệt và máy chủ. Điểm khác biệt quan trọng:</p>
+                            <p>HTTPS là phiên bản an toàn của HTTP, sử dụng <strong>TLS (Transport Layer Security)</strong> để mã hóa dữ liệu khi truyền tải.</p>
                             <ul>
-                                <li>Sử dụng <strong>TLS/SSL</strong> để mã hóa dữ liệu (tránh nghe lén), xác thực danh tính máy chủ và đảm bảo toàn vẹn dữ liệu.</li>
-                                <li>URL dùng tiền tố <code>https://</code> và trình duyệt hiển thị biểu tượng ổ khóa.</li>
-                                <li>Giúp bảo vệ người dùng khi đăng nhập, thanh toán, nhập thông tin cá nhân.</li>
+                                <li><strong>Mã hóa (Encryption):</strong> Tránh nghe lén, đảm bảo dữ liệu không bị đọc trộm.</li>
+                                <li><strong>Toàn vẹn (Integrity):</strong> Đảm bảo dữ liệu không bị chỉnh sửa trên đường truyền.</li>
+                                <li><strong>Xác thực (Authentication):</strong> Xác minh danh tính máy chủ qua chứng chỉ số (Certificate).</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- HTTP Security Headers -->
-                    <div class="faq-card">
-                        <div class="faq-icon"><i class="fas fa-shield-alt"></i></div>
-                        <div class="faq-content">
-                            <h3>8. HTTP Security Headers</h3>
-                            <p>Các trường cấu hình bảo mật được máy chủ gửi kèm trong phản hồi HTTP nhằm kiểm soát hành vi trình duyệt và ngăn chặn tấn công.</p>
-                            <ul>
-                                <li><strong>Strict-Transport-Security (HSTS):</strong> Bắt buộc dùng HTTPS.</li>
-                                <li><strong>Content-Security-Policy (CSP):</strong> Chống XSS / chèn script.</li>
-                                <li><strong>X-Content-Type-Options:</strong> Chống MIME sniffing.</li>
-                                <li><strong>X-Frame-Options:</strong> Chống clickjacking.</li>
-                                <li><strong>Referrer-Policy:</strong> Hạn chế rò rỉ thông tin referrer.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- OWASP Top 10 -->
+                    <!-- OWASP Top 10 (2025) -->
                     <div class="faq-card" style="flex-direction: column;">
                         <div class="faq-content" style="width: 100%;">
-                            <h3>9. OWASP Top 10 (2021)</h3>
-                            <p>Danh sách 10 nhóm rủi ro bảo mật web phổ biến và nghiêm trọng nhất:</p>
+                            <h3>8. OWASP Top 10 (2025)</h3>
+                            <p>Danh sách các rủi ro bảo mật web nghiêm trọng nhất, nhấn mạnh xu hướng chuyển dịch từ lỗi code thuần túy sang rủi ro hệ thống, cấu hình và chuỗi cung ứng.</p>
                             <div class="table-container">
                                 <table class="comparison-table">
                                     <tbody>
@@ -547,16 +531,211 @@
                     <div class="faq-card">
                         <div class="faq-icon"><i class="fas fa-flask"></i></div>
                         <div class="faq-content">
-                            <h3>10. OWASP Juice Shop</h3>
-                            <p>Một website cố tình chứa lỗ hổng bảo mật, trang này minh họa gần như đầy đủ lỗ hổng trong Top 10, được dùng để:</p>
+                            <h3>9. OWASP Juice Shop</h3>
+                            <p>Ứng dụng web được thiết kế cố tình chứa nhiều lỗ hổng bảo mật, được sử dụng cho mục đích:</p>
                             <ul>
-                                <li>Thực hành pentest và học khai thác lỗ hổng OWASP Top 10.</li>
-                                <li>Rèn kỹ năng bảo mật ứng dụng web.</li>
-                                <li>Dùng trong CTF, giảng dạy an toàn thông tin.</li>
+                                <li>Đào tạo kiến thức an toàn thông tin.</li>
+                                <li>Thực hành Pentest (kiểm thử xâm nhập).</li>
+                                <li>Kiểm thử hiệu quả của các công cụ bảo mật.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Security Report Detail Section -->
+                <div class="section-header" style="margin-top: 60px;">
+                    <h2 class="section-title">Phân Tích Lỗ Hổng & Giải Pháp</h2>
+                    <p class="section-subtitle">Báo cáo chi tiết về bảo mật ứng dụng trên Cloud</p>
+                </div>
+
+                <div class="faq-grid">
+                     <!-- Vulnerability 1: Sensitive Data Exposure -->
+                     <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <div class="faq-content">
+                            <h3>1. Sensitive Data Exposure</h3>
+                            <p><strong>Mô tả:</strong> Lộ dữ liệu nhạy cảm (PII, thẻ tín dụng, mật khẩu) do cấu hình sai hoặc không mã hóa.</p>
+                            <p><strong>Rủi ro Cloud:</strong> Rò rỉ dữ liệu quy mô lớn, vi phạm pháp luật (GDPR), mất uy tín.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vulnerability 2: DOM-based XSS -->
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-code"></i></div>
+                        <div class="faq-content">
+                            <h3>2. DOM-based XSS</h3>
+                            <p><strong>Mô tả:</strong> Kẻ tấn công chèn mã JavaScript độc hại vào trang web, thực thi trên trình duyệt người dùng thông qua DOM.</p>
+                            <p><strong>Rủi ro Cloud:</strong> Đánh cắp session cookie, chuyển hướng người dùng, giả mạo hành động.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vulnerability 3: Security Misconfiguration -->
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-cogs"></i></div>
+                        <div class="faq-content">
+                            <h3>3. Security Misconfiguration (Error Handling)</h3>
+                            <p><strong>Mô tả:</strong> Hiển thị thông báo lỗi chi tiết (stack trace, path) cho người dùng cuối.</p>
+                            <p><strong>Rủi ro Cloud:</strong> Lộ thông tin cấu trúc hệ thống, phiên bản phần mềm, giúp kẻ tấn công dễ dàng khai thác hơn.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vulnerability 4: Observability Failures (Metrics) -->
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="faq-content">
+                            <h3>4. Observability Failures (Exposed Metrics)</h3>
+                            <p><strong>Mô tả:</strong> Công khai các endpoint giám sát (như /metrics, /health, /status) mà không có xác thực.</p>
+                            <p><strong>Rủi ro Cloud:</strong> Lộ thông tin tải hệ thống, phiên bản, topology mạng, hỗ trợ tấn công DoS.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vulnerability 5: Broken Access Control -->
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-user-shield"></i></div>
+                        <div class="faq-content">
+                            <h3>5. Broken Access Control (Sandbox/Beta)</h3>
+                            <p><strong>Mô tả:</strong> Lộ môi trường sandbox hoặc tính năng beta ra internet mà không kiểm soát truy cập.</p>
+                            <p><strong>Rủi ro Cloud:</strong> Leo thang đặc quyền, truy cập dữ liệu thử nghiệm (có thể chứa dữ liệu thật), tấn công vào production từ sandbox.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vulnerability 6: Observability Failures (Logs) -->
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <div class="faq-content">
+                            <h3>6. Observability Failures (Access Logs)</h3>
+                            <p><strong>Mô tả:</strong> Cho phép truy cập trái phép vào file log hệ thống hoặc log ứng dụng.</p>
+                            <p><strong>Rủi ro Cloud:</strong> Lộ token, session ID, thông tin người dùng ghi trong log, giúp chiếm quyền tài khoản.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solutions Section -->
+                 <div class="faq-grid" style="margin-top: 30px;">
+                    <div class="faq-card" style="flex-direction: column;">
+                        <div class="faq-content" style="width: 100%;">
+                            <h3><i class="fas fa-tools"></i> Giải pháp khắc phục</h3>
+                            <ul>
+                                <li><strong>Mã hóa:</strong> Mã hóa dữ liệu nhạy cảm khi lưu trữ (At Rest) và truyền tải (In Transit).</li>
+                                <li><strong>Chống XSS:</strong> Kiểm soát chặt chẽ đầu ra (Output Encoding) và thiết lập <strong>Content Security Policy (CSP)</strong>.</li>
+                                <li><strong>Quản lý lỗi:</strong> Tắt hiển thị lỗi chi tiết (Verbose Error) trên môi trường Production, ghi log tập trung.</li>
+                                <li><strong>Bảo vệ Endpoint:</strong> Hạn chế truy cập IP, yêu cầu xác thực cho các endpoint giám sát và log.</li>
+                                <li><strong>Phân tách môi trường:</strong> Tách biệt hoàn toàn Sandbox và Production (mạng, tài khoản, dữ liệu).</li>
+                                <li><strong>Lớp bảo vệ Cloud:</strong> Kết hợp IAM (Identity Access Management), WAF (Web Application Firewall), Reverse Proxy và Logging tập trung.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Most Dangerous Vulnerability -->
+                <div class="faq-grid" style="margin-top: 30px;">
+                    <div class="faq-card" style="flex-direction: column; border-left: 5px solid #e74c3c;">
+                        <div class="faq-content" style="width: 100%;">
+                            <h3 style="color: #e74c3c;"><i class="fas fa-biohazard"></i> Lỗ hổng nguy hiểm nhất: A02:2025 – Security Misconfiguration</h3>
+                            <p>Trong môi trường Cloud, <strong>Security Misconfiguration</strong> được đánh giá là nguy hiểm nhất do số lượng dịch vụ khổng lồ cần cấu hình và khả năng bị expose trực tiếp ra Internet chỉ với một sai sót nhỏ.</p>
+                            
+                            <h4>Phân tích tác động:</h4>
+                            <ul>
+                                <li><strong>Dữ liệu:</strong> Rò rỉ dữ liệu nhạy cảm (S3 bucket public, database không pass).</li>
+                                <li><strong>Hệ thống:</strong> Bị chiếm quyền điều khiển, cài mã độc đào coin.</li>
+                                <li><strong>Người dùng:</strong> Mất thông tin cá nhân, bị giả mạo.</li>
+                            </ul>
+
+                            <h4>Vai trò của các lớp bảo vệ Cloud:</h4>
+                            <div class="table-container">
+                                <table class="comparison-table">
+                                    <tr>
+                                        <th>Công nghệ</th>
+                                        <th>Vai trò giảm thiểu rủi ro</th>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>IAM</strong></td>
+                                        <td>Kiểm soát quyền truy cập chi tiết (Least Privilege), ngăn chặn leo thang đặc quyền.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>WAF</strong></td>
+                                        <td>Chặn các tấn công phổ biến (SQLi, XSS) và scan lỗ hổng tự động.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Config Scanning</strong></td>
+                                        <td>Tự động quét và phát hiện cấu hình sai (ví dụ: AWS Config, CSPM).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>IaC (Infrastructure as Code)</strong></td>
+                                        <td>Quản lý cấu hình bằng code (Terraform, Ansible) giúp nhất quán và dễ review.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Monitoring</strong></td>
+                                        <td>Giám sát liên tục để phát hiện hành vi bất thường và phản ứng kịp thời.</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="section-header" style="margin-top: 60px;"> 
+                     <h2 class="section-title">Giám Sát & Ghi Nhật Ký (Monitoring & Logging)</h2> 
+                     <p class="section-subtitle">Tầm nhìn bảo mật toàn diện (Security Visibility) trong môi trường Cloud</p> 
+                 </div> 
+ 
+                 <div class="faq-grid"> 
+                     <!-- Concept & Role --> 
+                     <div class="faq-card"> 
+                         <div class="faq-icon"><i class="fas fa-eye"></i></div> 
+                         <div class="faq-content"> 
+                             <h3>1. Khái niệm & Vai trò</h3> 
+                             <ul> 
+                                 <li><strong>Monitoring (Giám sát):</strong> Quá trình theo dõi thời gian thực các chỉ số tổng hợp nhằm phát hiện sớm sự cố và hành vi bất thường.</li> 
+                                 <li><strong>Logging (Ghi nhật ký):</strong> Cơ chế ghi lại chi tiết các sự kiện đã xảy ra để phục vụ điều tra và truy vết.</li> 
+                                 <li><strong>Vai trò:</strong> Tạo nên <em>Security Visibility</em>, giúp phát hiện tấn công, phân tích nguyên nhân gốc rễ và giảm điểm mù bảo mật.</li> 
+                             </ul> 
+                         </div> 
+                     </div> 
+ 
+                     <!-- Objects to Monitor --> 
+                     <div class="faq-card"> 
+                         <div class="faq-icon"><i class="fas fa-bullseye"></i></div> 
+                         <div class="faq-content"> 
+                             <h3>2. Đối tượng cần giám sát</h3> 
+                             <p>Các thành phần quan trọng cần theo dõi chặt chẽ:</p> 
+                             <ul> 
+                                 <li><strong>Người dùng & Phiên:</strong> Truy cập, đăng nhập/đăng xuất, session ID.</li> 
+                                 <li><strong>Hoạt động bất thường:</strong> Request tăng đột biến, truy cập từ IP lạ.</li> 
+                                 <li><strong>Lỗi hệ thống:</strong> Lỗi ứng dụng, lỗi kết nối database.</li> 
+                             </ul> 
+                             <p><em>Mục tiêu:</em> Phát hiện truy cập trái phép, brute-force, DDoS và ngăn chặn rò rỉ dữ liệu.</p> 
+                         </div> 
+                     </div> 
+ 
+                     <!-- Analyzing Abnormal Situations --> 
+                     <div class="faq-card"> 
+                         <div class="faq-icon"><i class="fas fa-chart-bar"></i></div> 
+                         <div class="faq-content"> 
+                             <h3>3. Phân tích tình huống bất thường</h3> 
+                             <p>Khi hệ thống gặp sự cố (ví dụ: request tăng vọt, login fail liên tục):</p> 
+                             <ul> 
+                                 <li><strong>Monitoring:</strong> Phát hiện dấu hiệu qua biểu đồ (Spike lưu lượng, tỷ lệ lỗi cao).</li> 
+                                 <li><strong>Logging:</strong> Cung cấp chi tiết "Ai? IP nào? Thời gian nào?" để điều tra.</li> 
+                             </ul> 
+                             <p>Nếu thiếu Log, hệ thống sẽ thiếu dữ liệu chi tiết để xử lý triệt để.</p> 
+                         </div> 
+                     </div> 
+ 
+                     <!-- Incident Investigation --> 
+                     <div class="faq-card"> 
+                         <div class="faq-icon"><i class="fas fa-search-location"></i></div> 
+                         <div class="faq-content"> 
+                             <h3>4. Điều tra & Ứng cứu sự cố</h3> 
+                             <ul> 
+                                 <li><strong>Log là bằng chứng:</strong> Trả lời câu hỏi 5W1H (Who, What, Where, When, Why, How).</li> 
+                                 <li><strong>Quy trình ứng cứu:</strong> Monitoring giúp phát hiện sớm -> Logging hỗ trợ phân tích, ngăn chặn và khôi phục.</li> 
+                                 <li><strong>Lợi ích:</strong> Phát hiện sớm giúp giảm thiểu thiệt hại dữ liệu, tiết kiệm chi phí và bảo vệ uy tín.</li> 
+                             </ul> 
+                         </div> 
+                     </div> 
+                 </div>
             </div>
         </section>
 
